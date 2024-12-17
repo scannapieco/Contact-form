@@ -1,0 +1,255 @@
+@font-face {
+    font-family: "Karla";
+    src: url("./assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  :root {
+    --primary-color: hsl(169, 82%, 27%);
+    --primary-dark: hsl(169, 82%, 15%);
+    --border-color: hsl(186, 15%, 59%);
+    --error-color: hsl(0, 66%, 56%);
+    --toast-bg: hsl(187, 24%, 22%);
+    --light-bg: hsl(148, 38%, 91%);
+    --white: hsl(0, 0%, 100%);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+  }
+  
+  .form-container {
+    width: 650px;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-group {
+    width: 100%;
+  }
+  
+  .name-inputs {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .name-inputs input {
+    width: 100%;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea {
+    border: 1px solid var(--border-color);
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px 0;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  input:not([type="checkbox"]):not([type="radio"]):hover,
+  textarea:hover {
+    border: 1px solid var(--primary-color);
+  }
+  
+  input:not([type="checkbox"]):not([type="radio"]):focus,
+  textarea:focus {
+    outline: 2px solid var(--primary-color);
+    border: none;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  #query {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+  }
+  
+  .query-type {
+    border: 1px solid var(--border-color);
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .query-type label,
+  .query-type input,
+  .query-type {
+    cursor: pointer;
+  }
+  
+  input[type="radio"] {
+    accent-color: var(--primary-color);
+  }
+  
+  button {
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    border-radius: 5px;
+    border: none;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .checkbox > div {
+    display: flex;
+    margin-bottom: 8px;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    width: 15px;
+  }
+  
+  span.error {
+    font-size: 14px;
+    display: block;
+    color: var(--error-color);
+  }
+  
+  span.hidden {
+    display: none;
+  }
+  
+  .radio-selected {
+    background-color: var(--light-bg);
+    border: 1px solid var(--primary-color);
+  }
+  
+  .star {
+    color: var(--primary-color);
+  }
+  
+  .toast {
+    position: fixed;
+    top: 30px;
+    width: 400px;
+    background-color: var(--toast-bg);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 14px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .toast > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .toast img {
+    width: 14px;
+  }
+  
+  .toast span {
+    font-weight: bold;
+  }
+  
+  .toast.hidden {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  
+  .attribution {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    color: var(--border-color);
+  }
+  
+  .attribution a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .attribution a:hover {
+    text-decoration: underline;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .form-container {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .name-inputs,
+    #query {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .toast {
+      width: 90%;
+    }
+  }
+  footer.attribution {
+    text-align: center; 
+    font-size: 12px; 
+    margin-top: 20px; 
+    color: var(--border-color); 
+  }
+  
+  footer.attribution a {
+    color: var(--primary-color); 
+    text-decoration: none; 
+    font-weight: bold;
+  }
+  
+  footer.attribution a:hover {
+    text-decoration: underline; 
+  }
+    
